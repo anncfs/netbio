@@ -11,7 +11,7 @@ load_pidc_data(filename)
 (each row is in format: nodeX nodeY edgescore)}
 }
 \value{
-A data.table with row per edge, columns giving nodeX nodeY score
+A data.frame with row per edge, columns giving nodeX nodeY score
 }
 \description{
 Loads node and edge data from PIDC output file

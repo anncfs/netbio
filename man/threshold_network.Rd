@@ -7,7 +7,7 @@
 threshold_network(edges, threshold, as_percentage = TRUE, nodes = NULL)
 }
 \arguments{
-\item{edges}{A data.frame or matrix with row per edge, columns giving nodeX nodeY score}
+\item{edges}{A data.frame with row per edge, columns giving nodeX nodeY score}
 
 \item{threshold}{Threshold, either a \% of top scoring edges to include (default) or a number of edges}
 
@@ -15,7 +15,7 @@ threshold_network(edges, threshold, as_percentage = TRUE, nodes = NULL)
 \code{threshold} is the number of edges to keep}
 
 \item{nodes}{Reference list of node names, if not provided (default = NULL), the nodes in the threshold network
-are used}
+are used (in alphabetical order)}
 }
 \value{
 Thresholded network in iGraph format
