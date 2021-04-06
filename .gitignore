@@ -2,3 +2,4 @@
 .Rbuildignore
 .Rhistory
 inst
+testscript.R

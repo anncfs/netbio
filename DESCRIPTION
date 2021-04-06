@@ -16,4 +16,6 @@ RoxygenNote: 7.1.1
 Imports: 
     igraph,
     data.table,
-    fields
+    fields,
+    WebGestaltR,
+    gdata
