@@ -92,6 +92,7 @@ get_communities <- function(network, filename = NULL, cluster_algorithm = 'ml', 
 #' @param network_names List giving names for networks to use in plot labels
 #'   (default = c("network 1", "network 2"))
 #'
+#' @importFrom graphics axis title
 #' @export
 #' @return NULL
 plot_community_comparison <- function(net1, net2, min_size = 10, network_names = c('network 1', 'network 2')) {
@@ -126,7 +127,7 @@ plot_community_comparison <- function(net1, net2, min_size = 10, network_names =
   # if at least 2 clusters for each network, plot graph
   if(all(dim(mat) > 1)){
     fields::image.plot(1:ncol(mat), 1:nrow(mat), t(mat[nrow(mat):1,]),
-               xaxt = 'n', yaxt = 'n', col = gray(10:0/10), zlim = c(0,1),
+               xaxt = 'n', yaxt = 'n', col = grDevices::gray(10:0/10), zlim = c(0,1),
                xlab = paste0('clusters (', network_names[2], ')'),
                ylab = paste0('clusters (', network_names[1], ')'))
     axis(1, at = c(1:ncol(mat)), labels = id2, las=2, cex.axis = 0.8)

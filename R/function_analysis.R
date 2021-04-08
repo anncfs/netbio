@@ -40,7 +40,7 @@ fisher_test_clusters <- function(net_clusters, int_genes, min_size = 10, all_gen
   mat[,3] = stats::p.adjust(mat[,2], method = "BH")
 
   if (!is.null(filename)) {
-    utils::write.table(round(mat, 4), file = filename, sep = "\t", quote = FALSE, row.names = FALSE)
+    utils::write.table(mat, file = filename, sep = "\t", quote = FALSE, row.names = FALSE)
   }
 
   return(mat)

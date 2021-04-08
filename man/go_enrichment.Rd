@@ -10,7 +10,7 @@ go_enrichment(
   ontology = "geneontology_Biological_Process",
   filename = NULL,
   ref_genes = NULL,
-  dirname = NULL
+  dir_name = NULL
 )
 }
 \arguments{
@@ -26,7 +26,7 @@ default = 'geneontology_Biological_Process')}
 \item{ref_genes}{list of genes to use as reference for GO enrichment (default = NULL, in which case
 full genome used)}
 
-\item{dirname}{directory for WebGestaltR to output results (default = NULL, detailed output suppressed)}
+\item{dir_name}{directory for WebGestaltR to output results (default = NULL, detailed output suppressed)}
 }
 \description{
 Use WebGestaltR package to do GO term over-representation analysis for each community in network

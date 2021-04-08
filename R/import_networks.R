@@ -10,7 +10,7 @@
 #' @param filename Path and filename for PIDC .txt output file
 #'                 (each row is in format: nodeX nodeY edgescore)
 #'
-#' @import data.table
+#' @importFrom data.table fread
 #'
 #' @return A data.frame with row per edge, columns giving nodeX nodeY score
 #' @export

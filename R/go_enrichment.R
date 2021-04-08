@@ -11,7 +11,7 @@
 #' @param ontology which ontology to use (any valid WebGestalt enrichDatabase,
 #'   default = 'geneontology_Biological_Process')
 #' @param filename filename to record summarised results
-#' @param dirname directory for WebGestaltR to output results (default = NULL, detailed output suppressed)
+#' @param dir_name directory for WebGestaltR to output results (default = NULL, detailed output suppressed)
 #'
 #' @export
 #'
@@ -19,18 +19,18 @@ go_enrichment <- function(net_clusters, min_size = 10,
                           ontology = 'geneontology_Biological_Process',
                           filename = NULL,
                           ref_genes = NULL,
-                          dirname = NULL) {
+                          dir_name = NULL) {
 
   # check output
-  if (is.null(dirname)) {
+  if (is.null(dir_name)) {
     isOutput = FALSE
-    dirname = getwd()
+    dir_name = getwd()
   } else {
     isOutput = TRUE
   }
 
   # create directory if doesn't exist
-  if (!file.exists(dirname)) {dir.create(dirname)}
+  if (!file.exists(dir_name)) {dir.create(dir_name)}
 
   # get list of cluster IDs above min size
   idx = which(table(net_clusters) >= min_size)
@@ -44,7 +44,7 @@ go_enrichment <- function(net_clusters, min_size = 10,
                                             interestGene = int_genes, interestGeneType = "genesymbol",
                                             referenceGene = ref_genes, referenceGeneType = "genesymbol",
                                             referenceSet = "genome",
-                                            isOutput = isOutput, outputDirectory = dirname,
+                                            isOutput = isOutput, outputDirectory = dir_name,
                                             projectName = paste0("cluster",i))
 
     # (if no sig terms by fdr, then WebGestaltR returns NULL)
